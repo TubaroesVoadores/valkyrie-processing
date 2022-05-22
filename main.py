@@ -1,6 +1,6 @@
 import os
 from imageFetch import imageDownload, imageResize
-from imageProcessing import imageFiltering
+from imageProcessing import imageFiltering, imageProcess, imageCoords
 
 imageDir = './images'
 resizedImages = './resizedImages'
@@ -13,6 +13,7 @@ if not os.path.exists(imageDir) and not os.path.exists(filteredDir):
 if not os.path.exists(resizedImages):
     os.mkdir(resizedImages)
 
-imageDownload('https://tm.ibxk.com.br/2022/02/21/21085301870048.jpg?ims=1200x675', 'testImage2')
+#imageDownload('https://valkyrie-backend-dev-images-bucket.s3.amazonaws.com/DJI_0002.JPG', 'testImage3')
 imageResize()
 imageFiltering()
+imageProcess(imageCoords())
